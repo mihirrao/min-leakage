@@ -21,7 +21,7 @@ from transformers import EsmModel, EsmTokenizer
 from tqdm import tqdm
 import umap
 
-from maxcut_splitter import MaxCutSplitter
+from min_leakage import MinLeakageSplitter
 
 AA_ALPHABET = "ACDEFGHIKLMNPQRSTVWY"
 
@@ -254,7 +254,7 @@ def main():
     emb = get_esm_embeddings(seqs, model_name=args.model_name, batch_size=args.batch_size)
     dist = cosine_distance_matrix(emb)
 
-    splitter = MaxCutSplitter(
+    splitter = MinLeakageSplitter(
         distance_matrix=dist,
         desired_test_split_pct=args.desired_test_split_pct,
         buffer_pct=args.buffer_pct,

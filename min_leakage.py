@@ -2,7 +2,7 @@ import numpy as np
 from typing import List, Tuple, Dict, Optional
 
 
-class MaxCutSplitter:
+class MinLeakageSplitter:
     def __init__(
         self,
         distance_matrix: np.ndarray,
@@ -411,3 +411,4 @@ class MaxCutSplitter:
         self.best_min_tau = tau
 
         return self.best_train_val_indices, self.best_test_indices
+

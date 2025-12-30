@@ -1,10 +1,10 @@
-# Max-Cut Min-Leakage Data Splitting
+# Min-Leakage Data Splitting
 
 A method for splitting datasets into train/val and test sets that maximizes the separation between splits while maintainig a target split ratio. This is particularly useful for preventing data leakage in machine learning by ensuring test sets are maximally dissimilar to training data.
 
 ## Method
 
-The `MaxCutSplitter` implements two optimization strategies:
+The `MinLeakageSplitter` implements two optimization strategies:
 
 ### Mean-Max Optimization
 
